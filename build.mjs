@@ -2,7 +2,7 @@
 // Single source of truth: the compliance/trade engine lives ONLY in engine/engine.mjs
 // and the dataset ONLY in data/current-state.json. This injects both into the UI shell
 // (src/index.template.html) so the deployed site runs the exact engine the tests do.
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 const ROOT = new URL('.', import.meta.url);
 const read = (p) => readFileSync(new URL(p, ROOT), 'utf8');
 
@@ -17,5 +17,6 @@ const out = template
   .replace(/\/\*__ENGINE__[^*]*\*\//, () => engine)
   .replace('/*__DATA__*/null', () => data);
 
+mkdirSync(new URL('public/', ROOT), { recursive: true }); // publish dir is generated, not tracked
 writeFileSync(new URL('public/index.html', ROOT), out);
 console.log(`built public/index.html (${out.length} bytes) from engine.mjs + current-state.json`);
