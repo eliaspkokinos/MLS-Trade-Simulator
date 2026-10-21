@@ -14800,15 +14800,15 @@
       "age": 35,
       "roster_category": "Senior",
       "player_categories": [
-        "Designated Player",
-        "International"
+        "International",
+        "TAM Player"
       ],
       "status": "Active",
       "first_year_mls": true,
       "salary_guar": null,
-      "is_dp": true,
+      "is_dp": false,
       "is_u22": false,
-      "is_tam": false,
+      "is_tam": true,
       "is_intl": true,
       "is_homegrown": false,
       "is_ga": false
@@ -14929,11 +14929,13 @@
       "position": "Forward",
       "age": 30,
       "roster_category": "Senior",
-      "player_categories": [],
+      "player_categories": [
+        "Designated Player"
+      ],
       "status": "Active",
       "first_year_mls": false,
       "salary_guar": 1800000,
-      "is_dp": false,
+      "is_dp": true,
       "is_u22": false,
       "is_tam": false,
       "is_intl": false,
