@@ -7,7 +7,12 @@
 //   table says whether that class consumes Senior / DP / U22 / International. A player may carry
 //   an explicit `consumes` override for a resource. Key corrections over the old single
 //   isUnavailable() boolean:
-//     - Loaned In players CONSUME (they occupy active MLS slots) — previously relieved in error.
+//     - Loaned In players occupy a senior/supplemental slot and keep any DP/U22 designation
+//       (they are active, not relieved), BUT do not charge an international slot: the inbound
+//       loan's international designation stays with the parent club. The Sept 2026 profiles
+//       force this — Inter Miami lists 13 available internationals against 12 owned slots and is
+//       only legal because its 3 "Loan Player" internationals (Galarza, Micael, Caicedo) do not
+//       charge; FC Cincinnati (Malatini, Mrozek) is the same. So intl=0 for loaned_in.
 //     - Off-roster players never consume, regardless of loan status.
 //     - loaned_out / sei / injured relieve every resource (senior + international + designation),
 //       which the official September profiles confirm (clubs carry a 4th DP or extra U22 precisely
@@ -37,7 +42,7 @@ export function availability(p) {
 // per-resource consumption by class. 1 = consumes/charges, 0 = relieved.
 export const CONSUMES = {
   active:     { senior: 1, dp: 1, u22: 1, intl: 1 },
-  loaned_in:  { senior: 1, dp: 1, u22: 1, intl: 1 }, // inbound loan occupies active slots
+  loaned_in:  { senior: 1, dp: 1, u22: 1, intl: 0 }, // occupies senior/designation; intl stays with parent club
   loaned_out: { senior: 0, dp: 0, u22: 0, intl: 0 }, // qualifying season loan: full relief
   sei:        { senior: 0, dp: 0, u22: 0, intl: 0 }, // season-ending injury: full relief
   injured:    { senior: 0, dp: 0, u22: 0, intl: 0 }, // injured/unavailable list: full relief

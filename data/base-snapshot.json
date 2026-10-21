@@ -80,7 +80,7 @@
       "Toronto FC": 6,
       "Vancouver Whitecaps FC": 9
     },
-    "intl_owned_baseline_asof": "October 20, 2026",
+    "intl_owned_baseline_asof": "2026-10-21",
     "transactions_through": "2026-10-20",
     "data_through_display": "October 20, 2026",
     "snapshot_role": "immutable base snapshot (genesis)",
@@ -100,7 +100,7 @@
         "status": "verified"
       }
     ],
-    "intl_owned_note": "owned = official Sept-15 profile INTERNATIONAL SLOTS (N) header, which is the owned-slot count, not the number of international players listed. Corrected 2026-10-21 from values that had used the player-list count."
+    "intl_owned_note": "Baseline of record = official Sept-15 profile INTERNATIONAL SLOTS (N) header (owned-slot count), reconciled 2026-10-21. Colorado 8 / St. Louis 7 reflect the Sept-24 slot transaction logged in meta.intl_slot_trades; all other changes from logged trades must update this baseline."
   },
   "clubs": {
     "Atlanta United": {
