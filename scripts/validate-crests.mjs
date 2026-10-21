@@ -33,7 +33,17 @@ async function checkOne(id, entry) {
   try {
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), 20000);
-    const res = await fetch(url, { redirect: 'follow', signal: ctrl.signal });
+    const res = await fetch(url, {
+      redirect: 'follow',
+      signal: ctrl.signal,
+      headers: {
+        // Request like a browser. Logo CDNs commonly 403 server-side fetches that
+        // lack a browser User-Agent/Accept; an <img> tag on the deployed site sends these.
+        'User-Agent':
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+      },
+    });
     clearTimeout(timer);
     out.status = res.status;
     out.contentType = res.headers.get('content-type');
@@ -68,6 +78,10 @@ for (const r of results) {
 }
 // In GitHub Actions, surface results as annotations (readable via the API) and a job summary.
 if (process.env.GITHUB_ACTIONS === 'true') {
+  console.log(
+    `::notice title=Crest validation::PASS ${passes.length} / FAIL ${failures.length}` +
+      (failures.length ? ' — failing: ' + failures.map((f) => `${f.id}(${f.status || f.error})`).join(', ') : '')
+  );
   for (const f of failures) {
     console.log(`::error title=Crest ${f.id}::${f.name} (${f.id}) — ${f.error} [${f.url}]`);
   }
