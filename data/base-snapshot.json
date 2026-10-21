@@ -85,7 +85,19 @@
     "data_through_display": "October 20, 2026",
     "snapshot_role": "immutable base snapshot (genesis)",
     "snapshot_date": "2026-10-20",
-    "note": "Genesis state. All transactions through 2026-10-20 are already applied here; see transactions.json for provenance. From genesis forward, base stays frozen and current-state = base + replay(post-genesis verified events)."
+    "note": "Genesis state. All transactions through 2026-10-20 are already applied here; see transactions.json for provenance. From genesis forward, base stays frozen and current-state = base + replay(post-genesis verified events).",
+    "intl_owned_provisional": {
+      "Colorado Rapids": {
+        "value": 11,
+        "status": "needs_verification",
+        "reason": "Owned-slot value not tied to a verified international-slot transaction. Use provisionally; reconcile against actual slot-trade history before hardening."
+      },
+      "St. Louis CITY SC": {
+        "value": 7,
+        "status": "needs_verification",
+        "reason": "One below the league base of 8, implying a slot traded away; not tied to a verified transaction. Campagnolo (domestic GK loan) does not explain it."
+      }
+    }
   },
   "clubs": {
     "Atlanta United": {
