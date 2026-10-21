@@ -5,6 +5,7 @@
   "type": "module",
   "description": "MLS 2026 roster compliance and trade simulator",
   "scripts": {
-    "test": "node tests/engine.test.mjs"
+    "test": "node tests/engine.test.mjs",
+    "validate:crests": "node scripts/validate-crests.mjs"
   }
 }
