@@ -7,7 +7,7 @@
 // Needs network access to the crest CDN, so it runs in CI (GitHub Actions) or locally,
 // not inside network-restricted sandboxes.
 
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 
 const manifestPath = new URL('../data/crest-manifest.json', import.meta.url);
 const manifest = JSON.parse(readFileSync(manifestPath));
@@ -66,6 +66,19 @@ for (const r of results) {
   const detail = r.ok ? `${r.format} ${r.status}` : r.error;
   console.log(`  [${tag}] ${r.id.padEnd(5)} ${r.name.padEnd(26)} ${detail}`);
 }
+// In GitHub Actions, surface results as annotations (readable via the API) and a job summary.
+if (process.env.GITHUB_ACTIONS === 'true') {
+  for (const f of failures) {
+    console.log(`::error title=Crest ${f.id}::${f.name} (${f.id}) — ${f.error} [${f.url}]`);
+  }
+  const summaryPath = process.env.GITHUB_STEP_SUMMARY;
+  if (summaryPath) {
+    const lines = ['# Crest validation', '', `PASS ${passes.length} / FAIL ${failures.length}`, ''];
+    for (const r of results) lines.push(`- ${r.ok ? 'ok' : 'FAIL'} \`${r.id}\` ${r.name} — ${r.ok ? r.format : r.error}`);
+    try { writeFileSync(summaryPath, lines.join('\n') + '\n'); } catch {}
+  }
+}
+
 if (failures.length) {
   console.log('\nFailures by club id: ' + failures.map((f) => f.id).join(', '));
   process.exit(1);
