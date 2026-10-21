@@ -52,23 +52,23 @@
       "Atlanta United": 10,
       "Austin FC": 6,
       "Charlotte FC": 11,
-      "Chicago Fire FC": 14,
-      "FC Cincinnati": 9,
-      "Colorado Rapids": 11,
-      "Columbus Crew": 12,
+      "Chicago Fire FC": 11,
+      "FC Cincinnati": 7,
+      "Colorado Rapids": 8,
+      "Columbus Crew": 9,
       "FC Dallas": 10,
       "D.C. United": 7,
       "Houston Dynamo FC": 8,
       "Sporting Kansas City": 10,
-      "Los Angeles FC": 9,
-      "LA Galaxy": 12,
-      "Inter Miami CF": 14,
-      "Minnesota United FC": 11,
-      "CF Montréal": 10,
-      "Nashville SC": 9,
-      "New England Revolution": 5,
-      "New York City FC": 9,
-      "Orlando City SC": 8,
+      "Los Angeles FC": 8,
+      "LA Galaxy": 10,
+      "Inter Miami CF": 12,
+      "Minnesota United FC": 8,
+      "CF Montréal": 7,
+      "Nashville SC": 8,
+      "New England Revolution": 4,
+      "New York City FC": 7,
+      "Orlando City SC": 7,
       "Philadelphia Union": 5,
       "Portland Timbers": 8,
       "Real Salt Lake": 11,
@@ -78,7 +78,7 @@
       "Seattle Sounders FC": 2,
       "St. Louis CITY SC": 7,
       "Toronto FC": 6,
-      "Vancouver Whitecaps FC": 14
+      "Vancouver Whitecaps FC": 9
     },
     "intl_owned_baseline_asof": "October 20, 2026",
     "transactions_through": "2026-10-20",
@@ -95,11 +95,12 @@
         "count": 1,
         "term": "through end of 2027",
         "linked_to": "Zack Campagnolo loan (COL2 -> STL, through 2026; STL holds purchase option)",
-        "effect": "Colorado owned 10 -> 11; St. Louis owned 8 -> 7 (both revert after 2027)",
+        "effect": "Colorado owned 7 -> 8; St. Louis owned 8 -> 7 (Sept-15 profile headers were 7 and 8; both revert after 2027)",
         "source": "Official Colorado Rapids and St. Louis CITY SC releases (per user)",
         "status": "verified"
       }
-    ]
+    ],
+    "intl_owned_note": "owned = official Sept-15 profile INTERNATIONAL SLOTS (N) header, which is the owned-slot count, not the number of international players listed. Corrected 2026-10-21 from values that had used the player-list count."
   },
   "clubs": {
     "Atlanta United": {
@@ -126,28 +127,28 @@
     "Chicago Fire FC": {
       "model": "DP",
       "gam": 1114300,
-      "intl_owned": 14,
+      "intl_owned": 11,
       "dp_listed": 3,
       "u22_listed": 3
     },
     "FC Cincinnati": {
       "model": "DP",
       "gam": 1542968,
-      "intl_owned": 9,
+      "intl_owned": 7,
       "dp_listed": 3,
       "u22_listed": 3
     },
     "Colorado Rapids": {
       "model": "U22",
       "gam": 2031997,
-      "intl_owned": 11,
+      "intl_owned": 8,
       "dp_listed": 2,
       "u22_listed": 3
     },
     "Columbus Crew": {
       "model": "DP",
       "gam": 2365353,
-      "intl_owned": 12,
+      "intl_owned": 9,
       "dp_listed": 3,
       "u22_listed": 2
     },
@@ -182,63 +183,63 @@
     "Los Angeles FC": {
       "model": "U22",
       "gam": 480389,
-      "intl_owned": 9,
+      "intl_owned": 8,
       "dp_listed": 2,
       "u22_listed": 4
     },
     "LA Galaxy": {
       "model": "DP",
       "gam": 263670,
-      "intl_owned": 12,
+      "intl_owned": 10,
       "dp_listed": 4,
       "u22_listed": 2
     },
     "Inter Miami CF": {
       "model": "DP",
       "gam": 142300,
-      "intl_owned": 14,
+      "intl_owned": 12,
       "dp_listed": 3,
       "u22_listed": 5
     },
     "Minnesota United FC": {
       "model": "U22",
       "gam": 4320451,
-      "intl_owned": 11,
+      "intl_owned": 8,
       "dp_listed": 2,
       "u22_listed": 4
     },
     "CF Montréal": {
       "model": "U22",
       "gam": 2308722,
-      "intl_owned": 10,
+      "intl_owned": 7,
       "dp_listed": 1,
       "u22_listed": 3
     },
     "Nashville SC": {
       "model": "DP",
       "gam": 17667,
-      "intl_owned": 9,
+      "intl_owned": 8,
       "dp_listed": 3,
       "u22_listed": 3
     },
     "New England Revolution": {
       "model": "U22",
       "gam": 593847,
-      "intl_owned": 5,
+      "intl_owned": 4,
       "dp_listed": 2,
       "u22_listed": 4
     },
     "New York City FC": {
       "model": "DP",
       "gam": 842009,
-      "intl_owned": 9,
+      "intl_owned": 7,
       "dp_listed": 3,
       "u22_listed": 4
     },
     "Orlando City SC": {
       "model": "DP",
       "gam": 1865900,
-      "intl_owned": 8,
+      "intl_owned": 7,
       "dp_listed": 3,
       "u22_listed": 4
     },
@@ -308,7 +309,7 @@
     "Vancouver Whitecaps FC": {
       "model": "U22",
       "gam": 758412,
-      "intl_owned": 14,
+      "intl_owned": 9,
       "dp_listed": 2,
       "u22_listed": 4
     }
