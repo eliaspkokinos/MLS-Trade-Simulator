@@ -1,6 +1,7 @@
 // MLS Trade Simulator — data integrity guardrail (read-only reconciliation)
-// Extracted VERBATIM from public/index.html. Compares player-derived consumption against
-// the club summary and watches owned international slots for unexplained drift. Never rewrites.
+// Imports the canonical engine (engine.mjs); the website is built from that same module.
+// Compares player-derived consumption against the club summary and watches owned
+// international slots for unexplained drift. Never rewrites.
 
 import { rosterState, chargesIntlSlot } from './engine.mjs';
 

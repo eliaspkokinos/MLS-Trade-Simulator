@@ -52,23 +52,23 @@
       "Atlanta United": 10,
       "Austin FC": 6,
       "Charlotte FC": 11,
-      "Chicago Fire FC": 14,
-      "FC Cincinnati": 9,
-      "Colorado Rapids": 11,
-      "Columbus Crew": 12,
+      "Chicago Fire FC": 11,
+      "FC Cincinnati": 7,
+      "Colorado Rapids": 8,
+      "Columbus Crew": 9,
       "FC Dallas": 10,
       "D.C. United": 7,
       "Houston Dynamo FC": 8,
       "Sporting Kansas City": 10,
-      "Los Angeles FC": 9,
-      "LA Galaxy": 12,
-      "Inter Miami CF": 14,
-      "Minnesota United FC": 11,
-      "CF Montréal": 10,
-      "Nashville SC": 9,
-      "New England Revolution": 5,
-      "New York City FC": 9,
-      "Orlando City SC": 8,
+      "Los Angeles FC": 8,
+      "LA Galaxy": 10,
+      "Inter Miami CF": 12,
+      "Minnesota United FC": 8,
+      "CF Montréal": 7,
+      "Nashville SC": 8,
+      "New England Revolution": 4,
+      "New York City FC": 7,
+      "Orlando City SC": 7,
       "Philadelphia Union": 5,
       "Portland Timbers": 8,
       "Real Salt Lake": 11,
@@ -78,11 +78,12 @@
       "Seattle Sounders FC": 2,
       "St. Louis CITY SC": 7,
       "Toronto FC": 6,
-      "Vancouver Whitecaps FC": 14
+      "Vancouver Whitecaps FC": 9
     },
-    "intl_owned_baseline_asof": "October 20, 2026",
+    "intl_owned_baseline_asof": "2026-10-21",
     "transactions_through": "2026-10-20",
-    "data_through_display": "October 20, 2026"
+    "data_through_display": "October 20, 2026",
+    "intl_owned_note": "Baseline of record = official Sept-15 profile INTERNATIONAL SLOTS (N) header (owned-slot count), reconciled 2026-10-21. Colorado 8 / St. Louis 7 reflect the Sept-24 slot transaction logged in meta.intl_slot_trades; all other changes from logged trades must update this baseline."
   },
   "clubs": {
     "Atlanta United": {
@@ -109,28 +110,28 @@
     "Chicago Fire FC": {
       "model": "DP",
       "gam": 1114300,
-      "intl_owned": 14,
+      "intl_owned": 11,
       "dp_listed": 3,
       "u22_listed": 3
     },
     "FC Cincinnati": {
       "model": "DP",
       "gam": 1542968,
-      "intl_owned": 9,
+      "intl_owned": 7,
       "dp_listed": 3,
       "u22_listed": 3
     },
     "Colorado Rapids": {
       "model": "U22",
       "gam": 2031997,
-      "intl_owned": 11,
+      "intl_owned": 8,
       "dp_listed": 2,
       "u22_listed": 3
     },
     "Columbus Crew": {
       "model": "DP",
       "gam": 2365353,
-      "intl_owned": 12,
+      "intl_owned": 9,
       "dp_listed": 3,
       "u22_listed": 2
     },
@@ -165,63 +166,63 @@
     "Los Angeles FC": {
       "model": "U22",
       "gam": 480389,
-      "intl_owned": 9,
+      "intl_owned": 8,
       "dp_listed": 2,
       "u22_listed": 4
     },
     "LA Galaxy": {
       "model": "DP",
       "gam": 263670,
-      "intl_owned": 12,
+      "intl_owned": 10,
       "dp_listed": 4,
       "u22_listed": 2
     },
     "Inter Miami CF": {
       "model": "DP",
       "gam": 142300,
-      "intl_owned": 14,
+      "intl_owned": 12,
       "dp_listed": 3,
       "u22_listed": 5
     },
     "Minnesota United FC": {
       "model": "U22",
       "gam": 4320451,
-      "intl_owned": 11,
+      "intl_owned": 8,
       "dp_listed": 2,
       "u22_listed": 4
     },
     "CF Montréal": {
       "model": "U22",
       "gam": 2308722,
-      "intl_owned": 10,
+      "intl_owned": 7,
       "dp_listed": 1,
       "u22_listed": 3
     },
     "Nashville SC": {
       "model": "DP",
       "gam": 17667,
-      "intl_owned": 9,
+      "intl_owned": 8,
       "dp_listed": 3,
       "u22_listed": 3
     },
     "New England Revolution": {
       "model": "U22",
       "gam": 593847,
-      "intl_owned": 5,
+      "intl_owned": 4,
       "dp_listed": 2,
       "u22_listed": 4
     },
     "New York City FC": {
       "model": "DP",
       "gam": 842009,
-      "intl_owned": 9,
+      "intl_owned": 7,
       "dp_listed": 3,
       "u22_listed": 4
     },
     "Orlando City SC": {
       "model": "DP",
       "gam": 1865900,
-      "intl_owned": 8,
+      "intl_owned": 7,
       "dp_listed": 3,
       "u22_listed": 4
     },
@@ -291,7 +292,7 @@
     "Vancouver Whitecaps FC": {
       "model": "U22",
       "gam": 758412,
-      "intl_owned": 14,
+      "intl_owned": 9,
       "dp_listed": 2,
       "u22_listed": 4
     }
@@ -2117,7 +2118,7 @@
       "player_categories": [
         "International"
       ],
-      "status": "Active",
+      "status": "Injured List",
       "first_year_mls": false,
       "salary_guar": 1306771,
       "is_dp": false,
@@ -2284,7 +2285,7 @@
         "International",
         "U22 Initiative"
       ],
-      "status": "Active",
+      "status": "Injured List",
       "first_year_mls": true,
       "salary_guar": 655620,
       "is_dp": false,
@@ -2877,25 +2878,6 @@
       "is_ga": false
     },
     {
-      "name": "Tyrell Malacia",
-      "team": "FC Cincinnati",
-      "position": "Defender",
-      "age": 27,
-      "roster_category": "Senior",
-      "player_categories": [
-        "International"
-      ],
-      "status": "Active",
-      "first_year_mls": true,
-      "salary_guar": null,
-      "is_dp": false,
-      "is_u22": false,
-      "is_tam": false,
-      "is_intl": true,
-      "is_homegrown": false,
-      "is_ga": false
-    },
-    {
       "name": "Julián Malatini",
       "team": "FC Cincinnati",
       "position": "Defender",
@@ -3244,7 +3226,7 @@
       "player_categories": [
         "International"
       ],
-      "status": "Active",
+      "status": "Injured List",
       "first_year_mls": true,
       "salary_guar": 88025,
       "is_dp": false,
@@ -3288,7 +3270,11 @@
       "is_tam": false,
       "is_intl": true,
       "is_homegrown": false,
-      "is_ga": false
+      "is_ga": false,
+      "consumes": {
+        "intl": 0
+      },
+      "notes": "Asterisked in Sept intl box (non-charging); exact unavailability sub-status TBC."
     },
     {
       "name": "Wayne Frederick",
@@ -9207,7 +9193,8 @@
       "is_tam": false,
       "is_intl": true,
       "is_homegrown": false,
-      "is_ga": false
+      "is_ga": false,
+      "intl_exempt": true
     },
     {
       "name": "Owen Graham-Roache",
@@ -9433,7 +9420,8 @@
       "is_tam": true,
       "is_intl": true,
       "is_homegrown": false,
-      "is_ga": false
+      "is_ga": false,
+      "intl_exempt": true
     },
     {
       "name": "Dani Pereira",
@@ -9581,7 +9569,8 @@
       "is_tam": false,
       "is_intl": true,
       "is_homegrown": false,
-      "is_ga": false
+      "is_ga": false,
+      "intl_exempt": true
     },
     {
       "name": "Alexis Sánchez",
@@ -10332,7 +10321,7 @@
       "team": "New England Revolution",
       "position": "Defender",
       "age": 34,
-      "roster_category": "Senior",
+      "roster_category": "Supplemental Roster",
       "player_categories": [],
       "status": "Active",
       "first_year_mls": false,
@@ -10342,7 +10331,8 @@
       "is_tam": false,
       "is_intl": false,
       "is_homegrown": false,
-      "is_ga": false
+      "is_ga": false,
+      "notes": "Player Professional Development Role (supplemental) per Sept profile."
     },
     {
       "name": "Ilay Feingold",
@@ -11255,23 +11245,6 @@
       "is_dp": false,
       "is_u22": false,
       "is_tam": true,
-      "is_intl": false,
-      "is_homegrown": false,
-      "is_ga": false
-    },
-    {
-      "name": "Matt Miazga",
-      "team": "New York City FC",
-      "position": "Defender",
-      "age": 31,
-      "roster_category": "Senior",
-      "player_categories": [],
-      "status": "Active",
-      "first_year_mls": false,
-      "salary_guar": null,
-      "is_dp": false,
-      "is_u22": false,
-      "is_tam": false,
       "is_intl": false,
       "is_homegrown": false,
       "is_ga": false
@@ -14449,7 +14422,7 @@
         "U22 Initiative",
         "International"
       ],
-      "status": "Active",
+      "status": "Injured List",
       "first_year_mls": false,
       "salary_guar": 348859,
       "is_dp": false,
@@ -14974,7 +14947,7 @@
       "is_dp": false,
       "is_u22": false,
       "is_tam": false,
-      "is_intl": true,
+      "is_intl": false,
       "is_homegrown": false,
       "is_ga": false
     },
@@ -17396,7 +17369,8 @@
       "is_tam": false,
       "is_intl": true,
       "is_homegrown": false,
-      "is_ga": false
+      "is_ga": false,
+      "intl_exempt": true
     },
     {
       "name": "Theo Corbeanu",
@@ -17485,7 +17459,8 @@
       "is_tam": false,
       "is_intl": true,
       "is_homegrown": false,
-      "is_ga": false
+      "is_ga": false,
+      "intl_exempt": true
     },
     {
       "name": "William Yarbrough",
@@ -17600,7 +17575,7 @@
       "team": "Toronto FC",
       "position": "Defender",
       "age": 22,
-      "roster_category": "Senior",
+      "roster_category": "Supplemental Roster",
       "player_categories": [
         "International"
       ],
@@ -17612,14 +17587,15 @@
       "is_tam": false,
       "is_intl": true,
       "is_homegrown": false,
-      "is_ga": false
+      "is_ga": false,
+      "intl_exempt": true
     },
     {
       "name": "Lewis Morgan",
       "team": "Toronto FC",
       "position": "Forward",
       "age": 29,
-      "roster_category": "Senior",
+      "roster_category": "Supplemental Roster",
       "player_categories": [],
       "status": "Active",
       "first_year_mls": false,
@@ -17742,7 +17718,8 @@
       "is_tam": false,
       "is_intl": true,
       "is_homegrown": false,
-      "is_ga": false
+      "is_ga": false,
+      "intl_exempt": true
     },
     {
       "name": "Thomas Müller",
@@ -17900,7 +17877,8 @@
       "is_tam": true,
       "is_intl": true,
       "is_homegrown": false,
-      "is_ga": false
+      "is_ga": false,
+      "intl_exempt": true
     },
     {
       "name": "Mathías Laborda",
@@ -17920,7 +17898,8 @@
       "is_tam": true,
       "is_intl": true,
       "is_homegrown": false,
-      "is_ga": false
+      "is_ga": false,
+      "intl_exempt": true
     },
     {
       "name": "Cheikh Sabaly",
@@ -18354,16 +18333,16 @@
       "team": "St. Louis CITY SC",
       "position": "Goalkeeper",
       "age": null,
-      "roster_category": "Supplemental Slots 25-28",
+      "roster_category": "Off-Roster (Unavailable)",
       "player_categories": [],
-      "status": "Loaned In",
+      "status": "Off-Roster Homegrown · loan from Colorado Rapids 2 through 2026",
       "first_year_mls": false,
       "salary_guar": null,
       "is_dp": false,
       "is_u22": false,
       "is_tam": false,
       "is_intl": false,
-      "is_homegrown": false,
+      "is_homegrown": true,
       "is_ga": false
     },
     {

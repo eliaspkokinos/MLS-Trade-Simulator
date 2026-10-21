@@ -1,7 +1,9 @@
-# MLS Trade Simulator — static single-page app, no build step.
+# MLS Trade Simulator — deploy builds public/index.html from canonical sources.
+# build.mjs injects engine/engine.mjs + data/current-state.json into src/index.template.html,
+# so the deployed engine and dataset are never hand-synced.
 [build]
   publish = "public"
-  command = ""
+  command = "node build.mjs"
 
 [[headers]]
   for = "/*"
