@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "description": "Append-only log of real first-team roster transactions. verdict in {verified, needs_review, non_state_event}. Events with applied_at_genesis=true are already baked into base-snapshot.json; post-genesis verified events are replayed onto the base to produce current-state.json. Unknown state fields stay unknown and route to review; they are never guessed.",
+  "events": [
+    {
+      "id": "2026-09-22-miazga-nyc",
+      "date": "2026-09-22",
+      "player": "Matt Miazga",
+      "frm": "FC Cincinnati",
+      "to": "New York City FC",
+      "type": "waiver_claim",
+      "verdict": "verified",
+      "applied_at_genesis": true,
+      "source": {
+        "strongest": "MLS league transfer record"
+      },
+      "notes": "Already reflected in base (on NYCFC)."
+    },
+    {
+      "id": "2026-09-24-campagnolo-stl",
+      "date": "2026-09-24",
+      "player": "Zack Campagnolo",
+      "frm": "Colorado Rapids 2",
+      "to": "St. Louis CITY SC",
+      "type": "loan",
+      "verdict": "verified",
+      "applied_at_genesis": true,
+      "state": {
+        "is_intl": false,
+        "position": "Goalkeeper"
+      },
+      "source": {
+        "strongest": "MLS league transfer record"
+      },
+      "notes": "Domestic GK loan. Does not affect international slots."
+    },
+    {
+      "id": "2026-09-25-izoita-por",
+      "date": "2026-09-25",
+      "player": "Eric Izoita",
+      "frm": "Portland Timbers 2",
+      "to": "Portland Timbers",
+      "type": "homegrown_signing",
+      "verdict": "verified",
+      "applied_at_genesis": true,
+      "source": {
+        "strongest": "MLS league transfer record"
+      },
+      "notes": "Already in base."
+    },
+    {
+      "id": "2026-09-26-selemani-van",
+      "date": "2026-09-26",
+      "player": "Johnny Selemani",
+      "frm": "Whitecaps FC 2",
+      "to": "Vancouver Whitecaps FC",
+      "type": "homegrown_signing",
+      "verdict": "verified",
+      "applied_at_genesis": true,
+      "source": {
+        "strongest": "MLS league transfer record"
+      },
+      "notes": "Already in base."
+    },
+    {
+      "id": "2026-10-09-doucoure-clt",
+      "date": "2026-10-09",
+      "player": "Abdoulaye Doucouré",
+      "frm": "Neom SC",
+      "to": "Charlotte FC",
+      "type": "free_transfer",
+      "verdict": "verified",
+      "applied_at_genesis": true,
+      "state": {
+        "is_intl": true,
+        "is_dp": false,
+        "roster_category": "Senior",
+        "age": 33,
+        "dob": "unknown",
+        "budget_mechanism": "unknown"
+      },
+      "source": {
+        "strongest": "MLS official transfer tracker"
+      },
+      "notes": "Charlotte moved Goodwin + Aron John to SEI to accommodate. Not a DP (club full at 3)."
+    },
+    {
+      "id": "2026-10-09-goodwin-sei",
+      "date": "2026-10-09",
+      "player": "Archie Goodwin",
+      "team": "Charlotte FC",
+      "type": "season_ending_injury",
+      "verdict": "verified",
+      "applied_at_genesis": true,
+      "source": {
+        "strongest": "MLS official (Doucouré announcement)"
+      },
+      "notes": "International; SEI frees the intl slot Doucouré fills, so Charlotte nets flat."
+    },
+    {
+      "id": "2026-10-09-aronjohn-sei",
+      "date": "2026-10-09",
+      "player": "Aron John",
+      "team": "Charlotte FC",
+      "type": "season_ending_injury",
+      "verdict": "verified",
+      "applied_at_genesis": true,
+      "source": {
+        "strongest": "MLS official (Doucouré announcement)"
+      }
+    },
+    {
+      "id": "2026-10-09-jmartinez-cin",
+      "date": "2026-10-09",
+      "player": "José Martínez",
+      "frm": "Corinthians",
+      "to": "FC Cincinnati",
+      "type": "free_transfer",
+      "verdict": "verified",
+      "applied_at_genesis": true,
+      "state": {
+        "is_intl": true,
+        "is_dp": false,
+        "roster_category": "Senior",
+        "dob": "1994-08-07",
+        "green_card": "unknown"
+      },
+      "source": {
+        "strongest": "MLS official + league transfer record"
+      },
+      "notes": "Marked international; may hold a green card (would be domestic). Does not change any verdict."
+    },
+    {
+      "id": "2026-10-09-kone-rbny",
+      "date": "2026-10-09",
+      "player": "Sekou Koné",
+      "frm": "New York Red Bulls II",
+      "to": "Red Bull New York",
+      "type": "first_team_elevation",
+      "verdict": "verified",
+      "applied_at_genesis": true,
+      "state": {
+        "is_intl": true,
+        "is_dp": false,
+        "is_u22": "unconfirmed",
+        "roster_category": "Senior",
+        "age": 19
+      },
+      "source": {
+        "strongest": "MLS official transfer tracker"
+      },
+      "notes": "Permanent deal through 2027-28. U22 designation unconfirmed; marked standard senior international."
+    },
+    {
+      "id": "2027-01-01-mckenzie-phi",
+      "date": "2027-01-01",
+      "player": "Mark McKenzie",
+      "frm": "(Europe)",
+      "to": "Philadelphia Union",
+      "type": "designated_player_signing",
+      "verdict": "verified",
+      "applied_at_genesis": true,
+      "pending": true,
+      "effective": "2027-01-01",
+      "state": {
+        "is_dp": true,
+        "is_intl": false,
+        "is_homegrown": true,
+        "age": 27,
+        "dob": "1999-02-25"
+      },
+      "source": {
+        "strongest": "Spotrac; user-directed pending entry"
+      },
+      "notes": "Carried as pending-2027, flagged unavailable so it does not affect 2026 compliance."
+    },
+    {
+      "id": "2026-02-27-mbongue-crownlegacy",
+      "date": "2026-02-27",
+      "player": "Hugo Mbongue",
+      "frm": "(free)",
+      "to": "Crown Legacy FC",
+      "type": "mls_next_pro_signing",
+      "verdict": "non_state_event",
+      "applied_at_genesis": false,
+      "source": {
+        "strongest": "Charlotte FC official"
+      },
+      "notes": "MLS NEXT Pro, not a first-team move. League transfer list conflated it as Charlotte FC. Excluded from first-team state."
+    },
+    {
+      "id": "2026-10-09-richmond-clt-sta",
+      "date": "2026-10-09",
+      "player": "Nathan Richmond",
+      "frm": "Crown Legacy FC",
+      "to": "Charlotte FC",
+      "type": "short_term_agreement",
+      "verdict": "non_state_event",
+      "applied_at_genesis": false,
+      "source": {
+        "strongest": "Charlotte FC official"
+      },
+      "notes": "Short-term call-up, not a permanent roster addition. Excluded from roster construction."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "mls-trade-simulator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MLS 2026 roster compliance and trade simulator",
+  "scripts": {
+    "test": "node tests/engine.test.mjs"
+  }
+}

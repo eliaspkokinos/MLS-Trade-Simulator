@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+.netlify/
+# User scenarios are per-viewer (localStorage) and are NOT versioned here.
+scenarios/
+*.local.json
