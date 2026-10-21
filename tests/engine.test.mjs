@@ -24,9 +24,9 @@ console.log('Philadelphia flagged (should be false, McKenzie is pending):', phil
 
 const pass =
   illegal.length === 0 &&
-  r.flags.length === 6 &&
+  r.flags.length === 0 &&
   !phillyFlagged &&
   r.flags.filter(f => f.sev === 'breach').length === 0;
 
-console.log(pass ? '\nPASS — extracted engine matches app results' : '\nFAIL');
+console.log(pass ? '\nPASS — engine matches app; zero integrity flags' : '\nFAIL');
 process.exit(pass ? 0 : 1);

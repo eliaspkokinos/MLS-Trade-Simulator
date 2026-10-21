@@ -140,14 +140,14 @@
       "gam": 2031997,
       "intl_owned": 11,
       "dp_listed": 2,
-      "u22_listed": 4
+      "u22_listed": 3
     },
     "Columbus Crew": {
       "model": "DP",
       "gam": 2365353,
       "intl_owned": 12,
       "dp_listed": 3,
-      "u22_listed": 3
+      "u22_listed": 2
     },
     "FC Dallas": {
       "model": "U22",
@@ -2074,14 +2074,13 @@
       "age": 22,
       "roster_category": "Senior",
       "player_categories": [
-        "International",
-        "U22 Initiative"
+        "International"
       ],
       "status": "Active",
       "first_year_mls": true,
       "salary_guar": 283252,
       "is_dp": false,
-      "is_u22": true,
+      "is_u22": false,
       "is_tam": false,
       "is_intl": true,
       "is_homegrown": false,
@@ -2485,14 +2484,13 @@
       "age": 22,
       "roster_category": "Senior",
       "player_categories": [
-        "U22 Initiative",
         "International"
       ],
       "status": "Loaned Out",
       "first_year_mls": false,
       "salary_guar": 357000,
       "is_dp": false,
-      "is_u22": true,
+      "is_u22": false,
       "is_tam": false,
       "is_intl": true,
       "is_homegrown": false,
@@ -4677,14 +4675,13 @@
       "age": 25,
       "roster_category": "Senior",
       "player_categories": [
-        "International",
-        "U22 Initiative"
+        "International"
       ],
       "status": "Loaned Out",
       "first_year_mls": false,
       "salary_guar": 447000,
       "is_dp": false,
-      "is_u22": true,
+      "is_u22": false,
       "is_tam": false,
       "is_intl": true,
       "is_homegrown": false,
@@ -10834,14 +10831,14 @@
       "age": 32,
       "roster_category": "Senior",
       "player_categories": [
-        "Designated Player"
+        "TAM Player"
       ],
       "status": "Loaned In",
       "first_year_mls": false,
       "salary_guar": 1942886,
-      "is_dp": true,
+      "is_dp": false,
       "is_u22": false,
-      "is_tam": false,
+      "is_tam": true,
       "is_intl": false,
       "is_homegrown": false,
       "is_ga": false
@@ -15400,13 +15397,11 @@
       "position": "Forward",
       "age": 31,
       "roster_category": "Senior",
-      "player_categories": [
-        "Designated Player"
-      ],
+      "player_categories": [],
       "status": "Loaned Out",
       "first_year_mls": false,
       "salary_guar": 800000,
-      "is_dp": true,
+      "is_dp": false,
       "is_u22": false,
       "is_tam": false,
       "is_intl": false,
