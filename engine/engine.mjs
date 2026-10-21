@@ -62,6 +62,9 @@ export function onActiveRoster(p) {
 }
 // Back-compat alias used by trade evaluation (incoming budget loop).
 export function consumesActiveSlot(p) { return onActiveRoster(p); }
+// Display helper: "unavailable" = not on the active roster. A loaned-in player is
+// available (they occupy a slot), so this is false for them, unlike the old boolean.
+export function isUnavailable(p) { return !onActiveRoster(p); }
 
 export function countsSenior(p) { return p.roster_category === "Senior" && consumesResource(p, "senior"); }
 export function countsDP(p)     { return !!p.is_dp  && consumesResource(p, "dp"); }
