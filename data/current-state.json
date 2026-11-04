@@ -3262,7 +3262,7 @@
       "player_categories": [
         "International"
       ],
-      "status": "Active",
+      "status": "Injured List",
       "first_year_mls": false,
       "salary_guar": 113400,
       "is_dp": false,
@@ -3271,10 +3271,7 @@
       "is_intl": true,
       "is_homegrown": false,
       "is_ga": false,
-      "consumes": {
-        "intl": 0
-      },
-      "notes": "Asterisked in Sept intl box (non-charging); exact unavailability sub-status TBC."
+      "notes": "Out since early Oct with a torso injury (RotoWire / MLS injury report); asterisked in the Sept-15 intl box."
     },
     {
       "name": "Wayne Frederick",
