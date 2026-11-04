@@ -11584,25 +11584,6 @@
       "is_ga": false
     },
     {
-      "name": "Seymour Reid",
-      "team": "New York City FC",
-      "position": "Forward",
-      "age": 18,
-      "roster_category": "Supplemental Slots 25-28",
-      "player_categories": [
-        "Homegrown"
-      ],
-      "status": "Loaned Out",
-      "first_year_mls": false,
-      "salary_guar": 102840,
-      "is_dp": false,
-      "is_u22": false,
-      "is_tam": false,
-      "is_intl": false,
-      "is_homegrown": true,
-      "is_ga": false
-    },
-    {
       "name": "Julián Bazán",
       "team": "Red Bull New York",
       "position": "Defender",
@@ -18457,6 +18438,24 @@
       "is_intl": true,
       "is_homegrown": false,
       "is_ga": false
+    },
+    {
+      "name": "Matt Miazga",
+      "team": "New York City FC",
+      "position": "Defender",
+      "age": 31,
+      "roster_category": "Senior",
+      "player_categories": [],
+      "status": "Active",
+      "first_year_mls": false,
+      "salary_guar": null,
+      "is_dp": false,
+      "is_u22": false,
+      "is_tam": false,
+      "is_intl": false,
+      "is_homegrown": false,
+      "is_ga": false,
+      "notes": "Claimed off waivers from FC Cincinnati through end of 2026 (txn 2026-09-22-miazga-nyc). Domestic (USMNT). NYC salary TBD."
     }
   ]
 }
