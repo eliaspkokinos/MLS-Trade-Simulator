@@ -15,6 +15,8 @@ jobs:
           node-version: 20
       - name: Build site from canonical engine + data
         run: node build.mjs
+      - name: Verify committed public/index.html is in sync with the build
+        run: git diff --exit-code -- public/index.html || { echo "::error::public/index.html is stale. Run 'node build.mjs' and commit the result."; exit 1; }
       - name: Syntax-check generated page
         run: node -e "const h=require('fs').readFileSync('public/index.html','utf8');const m=h.match(/<script>([\s\S]*)<\/script>/);require('fs').writeFileSync('/tmp/b.js',m[1]);" && node --check /tmp/b.js
       - name: Engine regression test
