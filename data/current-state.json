@@ -4487,7 +4487,7 @@
       "team": "FC Dallas",
       "position": "Forward",
       "age": 18,
-      "roster_category": null,
+      "roster_category": "Off-Roster (Unavailable)",
       "player_categories": [
         "Homegrown"
       ],
@@ -4580,7 +4580,7 @@
       "team": "FC Dallas",
       "position": "Forward",
       "age": 15,
-      "roster_category": null,
+      "roster_category": "Off-Roster (Unavailable)",
       "player_categories": [
         "Homegrown"
       ],
@@ -5320,7 +5320,7 @@
       "team": "D.C. United",
       "position": "Goalkeeper",
       "age": 18,
-      "roster_category": null,
+      "roster_category": "Off-Roster (Unavailable)",
       "player_categories": [
         "Homegrown"
       ],
@@ -7293,7 +7293,7 @@
       "team": "Los Angeles FC",
       "position": "Defender",
       "age": 20,
-      "roster_category": null,
+      "roster_category": "Off-Roster (Unavailable)",
       "player_categories": [
         "Homegrown"
       ],
@@ -11994,7 +11994,7 @@
       "team": "Red Bull New York",
       "position": "Forward",
       "age": 18,
-      "roster_category": null,
+      "roster_category": "Off-Roster (Unavailable)",
       "player_categories": [
         "Homegrown"
       ],
@@ -12006,7 +12006,8 @@
       "is_tam": false,
       "is_intl": false,
       "is_homegrown": true,
-      "is_ga": false
+      "is_ga": false,
+      "notes": "Real RBNY homegrown (MLS player page) but absent from the Sept-15 compliance profile, so placed off-roster provisionally; confirm his actual slot from RBNY's current roster page."
     },
     {
       "name": "Serge Ngoma Jr.",
