@@ -18431,7 +18431,7 @@
       "is_dp": false,
       "is_u22": false,
       "is_tam": false,
-      "is_intl": true,
+      "is_intl": false,
       "is_homegrown": false,
       "is_ga": false
     },
@@ -18471,6 +18471,42 @@
       "is_homegrown": false,
       "is_ga": false,
       "notes": "Claimed off waivers from FC Cincinnati through end of 2026 (txn 2026-09-22-miazga-nyc). Domestic (USMNT). NYC salary TBD."
+    },
+    {
+      "name": "Tyrell Malacia",
+      "team": "FC Cincinnati",
+      "position": "Defender",
+      "age": 27,
+      "roster_category": "Senior",
+      "player_categories": [],
+      "status": "Active",
+      "first_year_mls": true,
+      "salary_guar": 1041625,
+      "is_dp": false,
+      "is_u22": false,
+      "is_tam": true,
+      "is_intl": true,
+      "is_homegrown": false,
+      "is_ga": false,
+      "notes": "Loan from Manchester United; Senior/International per Cincinnati's current roster. Re-added after an earlier erroneous removal."
+    },
+    {
+      "name": "Henry Wingo",
+      "team": "Toronto FC",
+      "position": "Defender",
+      "age": 30,
+      "roster_category": "Senior",
+      "player_categories": [],
+      "status": "Active",
+      "first_year_mls": false,
+      "salary_guar": 796031,
+      "is_dp": false,
+      "is_u22": false,
+      "is_tam": true,
+      "is_intl": false,
+      "is_homegrown": false,
+      "is_ga": false,
+      "notes": "Confirmed on Toronto's roster; Senior placement inferred from salary (no Toronto roster page on hand)."
     }
   ]
 }
