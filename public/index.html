@@ -139,7 +139,7 @@ details.more .items{margin-top:8px;display:flex;flex-direction:column;gap:5px} .
 const DATA_BASE = {
   "meta": {
     "generated": "2026-09-23",
-    "salary_vintage": "2026-04 MLSPA",
+    "salary_vintage": "2026-10 MLSPA",
     "gam_vintage": "2026-09-15 official",
     "roster_vintage": "2026-09-15 club profiles",
     "constants": {
@@ -233,7 +233,7 @@ const DATA_BASE = {
         "note": "Mirrors MLS.com current roster: 21/20 active senior. Miazga was claimed off waivers into the spot Kai Trewin's Injured List stint had opened; Trewin has since returned to active, so NYC carries one over pending an offsetting move."
       }
     ],
-    "salary_source": "2026 MLSPA Player Salaries (released Nov 2026); guaranteed compensation.",
+    "salary_source": "October 2026 MLSPA release; guaranteed compensation.",
     "salary_updated": "2026-11-19"
   },
   "clubs": {
@@ -18663,7 +18663,7 @@ const CLUBS = [{"id": "ATL", "name": "Atlanta United", "color": "#9D2235", "cres
 const CLUB_BY_NAME = Object.fromEntries(CLUBS.map(c=>[c.name,c]));
 // MLS Trade Machine — Rules Engine
 // Layer 1 (compliance + trade evaluation) and Layer 2 (canonical scenario state).
-// Vintage: rosters + GAM Sep 15 2026; salary Apr 2026 MLSPA.
+// Vintage: rosters + GAM Sep 15 2026; salary October 2026 MLSPA.
 //
 // ARCHITECTURE (one source of truth): there is exactly ONE state-counting function,
 // rosterState(team, scenario), and ONE state-transformation, applyTradeToData(scenario,
@@ -19026,7 +19026,7 @@ function render(){
 /* ===== TRADE VIEW ===== */
 function tradeShell(){ return ''+
   '<div class="main-head"><div><h2>Trade Analyzer</h2><p class="subt">Model a trade, check it against MLS roster rules, and chain moves into a scenario.</p>'+
-    '<p class="prov">Roster/GAM snapshot: Sep 15, 2026 · Compensation: Apr 2026 MLSPA · Ruleset: MLS 2026 · Transactions through October 20, 2026'+(scenario.history&&scenario.history.length?' · <b style="color:var(--accent-ink)">scenario: '+scenario.history.length+' committed move'+(scenario.history.length>1?"s":"")+'</b>':'')+'</p></div>'+
+    '<p class="prov">Roster/GAM snapshot: Sep 15, 2026 · Compensation: October 2026 MLSPA · Ruleset: MLS 2026 · Transactions through October 20, 2026'+(scenario.history&&scenario.history.length?' · <b style="color:var(--accent-ink)">scenario: '+scenario.history.length+' committed move'+(scenario.history.length>1?"s":"")+'</b>':'')+'</p></div>'+
     '<div class="head-actions"><button class="btn sm" data-toggle="settings">&#9881; Scenario settings</button>'+
       '<button class="btn sm" data-toggle="history" id="histbtn" style="display:none">&#128337; History</button>'+
       '<button class="btn sm" data-commit="1" id="savebtn">&#128190; Commit to scenario</button></div></div>'+
@@ -19127,7 +19127,7 @@ function rostersView(){ const s=rosterState(rostersTeam,scenario); const roster=
     '<div style="display:flex;align-items:center;gap:13px;margin-top:16px">'+ClubCrest(rostersTeam,"lg")+'<div><div style="font-size:19px;font-weight:700">'+rostersTeam+'</div><div style="color:var(--dim);font-size:12.5px">'+(scenario.clubs[rostersTeam].model==="U22"?"U22 Initiative model · 2 DP / 4 U22":"Designated Player model · 3 DP / 3 U22")+'</div></div></div>'+
     '<div class="strip">'+cell("Designated Players",s.dpCount,s.dpMax)+cell("U22 Initiative",s.u22Count,s.u22Max)+cell("Internationals",s.intlEffective,s.intlOwned)+cell("Senior roster",s.seniorCount,s.seniorMax)+'<div class="cell"><div class="lab">GAM available</div><div class="val tnum" style="font-size:17px">'+fmtK(s.gam)+'</div></div></div>'+
     '<div class="rtable"><table><thead><tr><th>Player</th><th>Pos</th><th class="num">Age</th><th>Categories</th><th class="num">Guaranteed comp</th><th>Status</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
-    '<div class="foot">Categories reflect each player\'s roster designation at this club. Comp is Apr 2026 MLSPA guaranteed compensation; a dash means no April figure (a post-window arrival awaiting the next release). Salary Budget treatment is modeled, not the club\'s exact private accounting.</div>'; }
+    '<div class="foot">Categories reflect each player\'s roster designation at this club. Comp is October 2026 MLSPA guaranteed compensation; a dash means a player not listed in that release. Salary Budget treatment is modeled, not the club\'s exact private accounting.</div>'; }
 
 /* ===== SCENARIOS VIEW ===== */
 function scenariosView(){ const h=scenario.history||[]; const saved=loadSaved();
