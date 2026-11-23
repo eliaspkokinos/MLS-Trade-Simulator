@@ -48,6 +48,7 @@ select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.o
 .tag.dp{background:var(--dp-bg);color:var(--dp);border-color:#EAD79A} .tag.u22{background:var(--u22-bg);color:var(--u22);border-color:#AEDCC2}
 .tag.tam{background:var(--tam-bg);color:var(--tam);border-color:#EEC3A6} .tag.intl{background:var(--intl-bg);color:var(--intl);border-color:#B6CFF2}
 .tag.hg{background:var(--hg-bg);color:var(--hg);border-color:#CFD6DE} .tag.ga{background:var(--ga-bg);color:var(--ga);border-color:#D6C2EC} .tag.un{background:var(--un-bg);color:var(--un);border-color:#EFC0BB}
+.tag.slot{background:#EDF1F6;color:#334257;border-color:#CFD9E4;font-variant-numeric:tabular-nums}
 /* drawer */
 .drawer{background:var(--card);border:1px solid var(--line2);border-radius:12px;padding:16px 18px;margin-top:14px;box-shadow:0 8px 26px rgba(20,30,50,.07)}
 .drawer h4{margin:0 0 4px;font-size:13.5px;font-weight:650} .drawer .hint{color:var(--dim);font-size:12px;margin:0 0 12px;max-width:760px}
@@ -112,6 +113,11 @@ details.more .items{margin-top:8px;display:flex;flex-direction:column;gap:5px} .
 .strip .cell.over .val{color:var(--bad)} .strip .cell.tight .val{color:var(--warn)}
 .rtable{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .rtable td .pn{font-weight:550} .rtable td.meta{color:var(--dim)}
+.rsec{margin-top:18px} .rsec:first-of-type{margin-top:8px}
+.rsec-h{display:flex;align-items:baseline;gap:9px;margin:0 2px 7px}
+.rsec-h .rsec-name{font-size:13.5px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.rsec-h .rsec-max{font-size:11px;font-weight:600;color:var(--dim)}
+.rsec-h .rsec-ct{margin-left:auto;font-size:11.5px;font-weight:600;color:var(--dimmer);font-variant-numeric:tabular-nums}
 /* scenarios view */
 .scards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .scard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
@@ -18993,10 +18999,24 @@ const st = { A:{team:"San Jose Earthquakes",players:new Set(),gam:0,slots:0}, B:
 let openDD=null, ddSearch="", openDrawer=null;
 const fmtK=n=>{ if(n==null)return"—"; const a=Math.abs(n); if(a>=1000000)return"$"+(n/1000000).toFixed(2)+"M"; if(a>=1000)return"$"+Math.round(n/1000)+"K"; return "$"+n; };
 const fmtExact=n=>n==null?"—":"$"+Math.round(n).toLocaleString();
-function idBadges(p, tam){ const t=[];
+function slotLabel(cat){
+  switch(cat){
+    case 'Senior': return 'S';
+    case 'Supplemental Slots 21-24': return '21-24';
+    case 'Supplemental Slots 25-28': return '25-28';
+    case 'Supplemental Slots 29-30': return '29-30';
+    case 'Supplemental Slot 31': return '31';
+    case 'Supplemental Roster': return 'SUP';
+  }
+  if((cat||'').indexOf('Off-Roster')===0) return 'OFF';
+  if((cat||'').indexOf('Pending')===0) return 'PEND';
+  return null;
+}
+function idBadges(p, tam, showSlot){ const t=[];
+  if(showSlot){ const sl=slotLabel(p.roster_category); if(sl)t.push(['slot',sl,p.roster_category]); }
   if(p.is_dp)t.push(['dp','DP']); if(p.is_u22)t.push(['u22','U22']); if(tam&&p.is_tam)t.push(['tam','TAM']);
   if(p.is_intl)t.push(['intl','INT']); if(p.is_homegrown)t.push(['hg','HG']); if(p.is_ga)t.push(['ga','GA']); if(isUnavailable(p))t.push(['un','UNAV']);
-  return '<span class="tags">'+t.map(([c,l])=>'<span class="tag '+c+'">'+l+'</span>').join('')+'</span>'; }
+  return '<span class="tags">'+t.map(([c,l,title])=>'<span class="tag '+c+'"'+(title?' title="'+title+'"':'')+'>'+l+'</span>').join('')+'</span>'; }
 function tamTip(p){ return p.is_tam ? ' title="Current roster treatment at this club: TAM (does not travel in a trade)"' : ''; }
 function deal(){ return {teamA:st.A.team,teamB:st.B.team,aSends:{players:[...st.A.players],gam:st.A.gam,intlSlots:st.A.slots},bSends:{players:[...st.B.players],gam:st.B.gam,intlSlots:st.B.slots}}; }
 function hasProposal(){ return st.A.players.size||st.B.players.size||st.A.gam||st.B.gam||st.A.slots||st.B.slots; }
@@ -19044,7 +19064,7 @@ function renderCard(key,r){
   const s=st[key], el=document.getElementById("card"+key); if(!el)return; const roster=scenario.players.filter(p=>p.team===s.team);
   let pills="";
   for(const nm of s.players){ const p=roster.find(x=>x.name===nm); if(!p)continue;
-    pills+='<span class="pill"'+tamTip(p)+'>'+p.name+idBadges(p,false)+'<button class="rm" data-rm-player="'+key+'" data-nm="'+encodeURIComponent(nm)+'">&times;</button></span>'; }
+    pills+='<span class="pill"'+tamTip(p)+'>'+p.name+idBadges(p,false,true)+'<button class="rm" data-rm-player="'+key+'" data-nm="'+encodeURIComponent(nm)+'">&times;</button></span>'; }
   if(s.slots>0) pills+='<span class="pill slot">&#127760; Intl slot<span class="stp"><button data-slot="'+key+'" data-d="-1">&minus;</button><b class="tnum">'+s.slots+'</b><button data-slot="'+key+'" data-d="1">+</button></span><button class="rm" data-rmslot="'+key+'">&times;</button></span>';
   if(s.gam>0) pills+='<span class="pill gam">&#128176; '+fmtK(s.gam)+' GAM<button class="rm" data-rmgam="'+key+'">&times;</button></span>';
   const fieldInner = pills || '<span class="ph">Add player or asset…</span>';
@@ -19056,7 +19076,7 @@ function renderCard(key,r){
     if(q===""||"gam allocation money".includes(q)) rows+='<div class="ddrow opt" data-add-gam="'+key+'">&#128176;&nbsp; GAM (allocation money)</div>';
     rows+='<div class="ddgroup">'+s.team+' players</div>';
     for(const p of avail){ const meta=[p.position||"",p.age?("· "+p.age):""].join(" ").trim();
-      rows+='<div class="ddrow" data-add-player="'+key+'" data-nm="'+encodeURIComponent(p.name)+'"'+tamTip(p)+'><span class="nm">'+p.name+'<span class="meta">'+meta+'</span></span>'+idBadges(p,false)+'<span class="sal">'+fmtK(p.salary_guar)+'</span></div>'; }
+      rows+='<div class="ddrow" data-add-player="'+key+'" data-nm="'+encodeURIComponent(p.name)+'"'+tamTip(p)+'><span class="nm">'+p.name+'<span class="meta">'+meta+'</span></span>'+idBadges(p,false,true)+'<span class="sal">'+fmtK(p.salary_guar)+'</span></div>'; }
     if(!avail.length) rows+='<div class="ddrow" style="color:var(--dimmer);cursor:default">No matching players</div>';
     dd='<div class="ddpanel"><input class="search2" placeholder="Search players or assets..." value="'+ddSearch.replace(/"/g,"&quot;")+'" data-search="'+key+'"><div class="ddlist">'+rows+'</div></div>';
   }
@@ -19121,13 +19141,21 @@ function renderDrawers(){ const sd=document.getElementById("settingsDrawer"),hd=
 /* ===== ROSTERS VIEW ===== */
 function rostersView(){ const s=rosterState(rostersTeam,scenario); const roster=scenario.players.filter(p=>p.team===rostersTeam).slice().sort((a,b)=>(b.salary_guar||0)-(a.salary_guar||0));
   const cell=(lab,cur,max)=>{ const cls=cur>max?"over":cur>=max?"tight":""; return '<div class="cell '+cls+'"><div class="lab">'+lab+'</div><div class="val tnum">'+cur+'<span class="max">/'+max+'</span></div></div>'; };
-  let rows=""; for(const p of roster){ rows+='<tr><td><span class="pn">'+p.name+'</span></td><td class="meta">'+(p.position||"—")+'</td><td class="meta tnum">'+(p.age||"—")+'</td><td>'+idBadges(p,true)+'</td><td class="num tnum">'+fmtK(p.salary_guar)+'</td><td class="meta">'+(isUnavailable(p)?p.status:"Active")+'</td></tr>'; }
+  const rowHtml=p=>'<tr><td><span class="pn">'+p.name+'</span></td><td class="meta">'+(p.position||"—")+'</td><td class="meta tnum">'+(p.age||"—")+'</td><td>'+idBadges(p,true,false)+'</td><td class="num tnum">'+fmtK(p.salary_guar)+'</td><td class="meta">'+(isUnavailable(p)?p.status:"Active")+'</td></tr>';
+  const thead='<thead><tr><th>Player</th><th>Pos</th><th class="num">Age</th><th>Categories</th><th class="num">Guaranteed comp</th><th>Status</th></tr></thead>';
+  const SECTIONS=[['Senior','Senior Roster','20 max'],['Supplemental Slots 21-24','Supplemental Slots 21–24','4 max'],['Supplemental Slots 25-28','Supplemental Slots 25–28','4 max'],['Supplemental Slots 29-30','Supplemental Slots 29–30','2 max'],['Supplemental Slot 31','Supplemental Spot 31',''],['Supplemental Roster','Supplemental Roster',''],['Off-Roster (Unavailable)','Off-Roster',''],['Pending 2027','Pending 2027','']];
+  const bySal=(a,b)=>(b.salary_guar||0)-(a.salary_guar||0);
+  const seen=new Set();
+  const section=(name,max,list)=>{ if(!list.length)return''; return '<div class="rsec"><div class="rsec-h"><span class="rsec-name">'+name+'</span>'+(max?'<span class="rsec-max">'+max+'</span>':'')+'<span class="rsec-ct">'+list.length+'</span></div><div class="rtable"><table>'+thead+'<tbody>'+list.map(rowHtml).join('')+'</tbody></table></div></div>'; };
+  let sections='';
+  for(const [cat,name,max] of SECTIONS){ const grp=roster.filter(p=>p.roster_category===cat).sort(bySal); grp.forEach(p=>seen.add(p)); sections+=section(name,max,grp); }
+  sections+=section('Other','',roster.filter(p=>!seen.has(p)).sort(bySal));
   return '<div class="main-head"><div><h2>Rosters</h2><p class="subt">Live roster and constraint profile for each club, reflecting any committed scenario moves.</p></div>'+
     '<div class="head-actions"><select class="btn" data-rteam style="font-weight:600">'+TEAMS.map(t=>'<option'+(t===rostersTeam?' selected':'')+'>'+t+'</option>').join('')+'</select></div></div>'+
     '<div style="display:flex;align-items:center;gap:13px;margin-top:16px">'+ClubCrest(rostersTeam,"lg")+'<div><div style="font-size:19px;font-weight:700">'+rostersTeam+'</div><div style="color:var(--dim);font-size:12.5px">'+(scenario.clubs[rostersTeam].model==="U22"?"U22 Initiative model · 2 DP / 4 U22":"Designated Player model · 3 DP / 3 U22")+'</div></div></div>'+
     '<div class="strip">'+cell("Designated Players",s.dpCount,s.dpMax)+cell("U22 Initiative",s.u22Count,s.u22Max)+cell("Internationals",s.intlEffective,s.intlOwned)+cell("Senior roster",s.seniorCount,s.seniorMax)+'<div class="cell"><div class="lab">GAM available</div><div class="val tnum" style="font-size:17px">'+fmtK(s.gam)+'</div></div></div>'+
-    '<div class="rtable"><table><thead><tr><th>Player</th><th>Pos</th><th class="num">Age</th><th>Categories</th><th class="num">Guaranteed comp</th><th>Status</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
-    '<div class="foot">Categories reflect each player\'s roster designation at this club. Comp is October 2026 MLSPA guaranteed compensation; a dash means a player not listed in that release. Salary Budget treatment is modeled, not the club\'s exact private accounting.</div>'; }
+    sections+
+    '<div class="foot">Players are grouped by roster slot: Senior (1–20), Supplemental (21–24, 25–28, 29–30), Spot 31, and Off-Roster. Categories reflect each player\'s roster designation at this club. Comp is October 2026 MLSPA guaranteed compensation; a dash means a player not listed in that release. Salary Budget treatment is modeled, not the club\'s exact private accounting.</div>'; }
 
 /* ===== SCENARIOS VIEW ===== */
 function scenariosView(){ const h=scenario.history||[]; const saved=loadSaved();
